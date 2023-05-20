@@ -1,6 +1,7 @@
 import pygame as pg
 import sys
 from settings import *
+from map import Map
 
 class Game:
     def __init__(self):
@@ -13,11 +14,13 @@ class Game:
 
     def update(self):
         pg.display.flip()
-        self.clock.tick()
+        self.clock.tick(FPS)
         pg.display.set_caption(f'{self.clock.get_fps() :.1f}')
 
     def draw(self):
         self.screen.fill('black')
+        map = Map(self.screen)
+        map.drawBall()
 
     def check_events(self):
         for event in pg.event.get():
