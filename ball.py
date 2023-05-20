@@ -3,12 +3,16 @@ import random
 class Ball:
 
     def __init__(self):
-        self.velocity = vx, vy =  (random.randrange(-1, 2, 2), 1) 
-        self.coords = x, y = (WIDTH/2, HEIGHT/2)
+        self.vx = random.randrange(-1, 2, 2) * 250
+        self.vy = 0
+        self.x = WIDTH/2
+        self.y = HEIGHT/2
 
     def move(self):
-        self.coords += FPS * self.velocity
-        
+        self.x += 1/FPS * self.vx
+
+    
+
 
     
 
