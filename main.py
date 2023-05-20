@@ -18,8 +18,8 @@ class Game:
 
     def draw(self):
         self.screen.fill('black')
-        self.map.drawBall()
-        self.map.drawSliders()
+        self.map.draw_ball()
+        self.map.draw_sliders()
 
     def check_events(self):
         for event in pg.event.get():
