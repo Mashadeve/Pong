@@ -12,10 +12,10 @@ class Map:
         self.ball = Ball()
        
 
-    def drawBall(self):
+    def draw_ball(self):
         pg.draw.circle(self.screen, WHITE, (self.ball.x, self.ball.y), 5)
         self.ball.move()
 
-    def drawSliders(self):
+    def draw_sliders(self):
         pg.draw.rect(self.screen, WHITE, pg.Rect(self.slider_left.slider_pos,self.slider_left.slider_size))
         pg.draw.rect(self.screen, WHITE, pg.Rect(self.slider_right.slider_pos, self.slider_right.slider_size))
