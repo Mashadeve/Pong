@@ -1,0 +1,4 @@
+RES = WIDTH, HEIGHT = 858, 525
+FPS = 60
+
+
