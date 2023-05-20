@@ -21,6 +21,7 @@ class Game:
         self.screen.fill('black')
         map = Map(self.screen)
         map.drawBall()
+        map.drawSliders()
 
     def check_events(self):
         for event in pg.event.get():
