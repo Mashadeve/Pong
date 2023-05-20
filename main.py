@@ -8,9 +8,8 @@ class Game:
         pg.init()
         self.screen = pg.display.set_mode(RES)
         self.clock = pg.time.Clock()
+        self.map = Map(self.screen)
 
-    def new_game(self):
-        pass
 
     def update(self):
         pg.display.flip()
@@ -19,9 +18,8 @@ class Game:
 
     def draw(self):
         self.screen.fill('black')
-        map = Map(self.screen)
-        map.drawBall()
-        map.drawSliders()
+        self.map.drawBall()
+        self.map.drawSliders()
 
     def check_events(self):
         for event in pg.event.get():

@@ -1,6 +1,7 @@
 import pygame as pg
 from settings import *
 from slider import *
+from ball import Ball
 
 class Map:
 
@@ -8,9 +9,12 @@ class Map:
         self.screen = screen
         self.slider_left = Slider(LEFT)
         self.slider_right = Slider(RIGHT)
+        self.ball = Ball()
+       
 
     def drawBall(self):
-        pg.draw.circle(self.screen, WHITE, CENTER, 5)
+        pg.draw.circle(self.screen, WHITE, (self.ball.x, self.ball.y), 5)
+        self.ball.move()
 
     def drawSliders(self):
         pg.draw.rect(self.screen, WHITE, pg.Rect(self.slider_left.slider_pos,self.slider_left.slider_size))
