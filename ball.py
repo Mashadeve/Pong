@@ -4,8 +4,9 @@ import random
 class Ball:
 
     def __init__(self):
-        self.vx = -1 * 250
-        self.vy = 100
+        self.vx = [1, -1][int(round(random.random()))] * 250
+        self.vy = [1, -1][int(round(random.random()))] * 100
+        random.randrange(-1, 2, 2)
         self.x = WIDTH/2
         self.y = HEIGHT/2
 
@@ -22,6 +23,16 @@ class Ball:
             self.vx *= -1.1
         if (self.y <= 0 or self.y >= HEIGHT):
             self.vy *= -1.1
+
+    def check_position(self):
+        if self.x < 0:
+            return "LEFT"
+        if self.x > WIDTH:
+            return "RIGHT"
+
+
+
+
 
 
 
