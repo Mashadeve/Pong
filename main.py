@@ -24,22 +24,21 @@ class Game:
         self.map.draw_all(self.slider_left, self.slider_right)
 
     def check_events(self):
-        key_input = pg.key.get_pressed()
-        pg.key.set_repeat()
         for event in pg.event.get():
             if event.type == pg.QUIT:
                 pg.quit()
                 sys.exit()
-   
+        
+        pg.key.set_repeat()
         key_input = pg.key.get_pressed()
         if key_input[pg.K_UP]:
-            self.slider_left.move(-1)
-        if key_input[pg.K_DOWN]:
-            self.slider_left.move(1)
-        if key_input[pg.K_w]:
             self.slider_right.move(-1)
-        if key_input[pg.K_s]:
+        if key_input[pg.K_DOWN]:
             self.slider_right.move(1)
+        if key_input[pg.K_w]:
+            self.slider_left.move(-1)
+        if key_input[pg.K_s]:
+            self.slider_left.move(1)
 
 
     def run(self):
